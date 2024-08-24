@@ -1,3 +1,7 @@
+/* * {
+    outline: 2px solid red
+}
+*/
 body {
     font-family: "Roboto", sans-serif;
     color: #434455;
@@ -27,16 +31,18 @@ ul {
 }
 
 .container {
-    width: 1158px;
-    padding: 0 15px;
-    margin: 0 auto;
+    /* width: 1158px; */
+    /* padding: 0 15px; */ 
+    margin: 24px;
 }
+
 
 .nav-menu {
+    flex-basis: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-
 
 .right-navigation {
     display: flex;
@@ -44,8 +50,17 @@ ul {
 }
 
 .address {
-    font-style: normal;
+    display: none;
 }
+
+@media screen and (min-width: 768px)
+{
+    .address {
+        display: inline;
+        font-style: normal;
+    }
+}
+
 
 .address-link {
     font-size: 16px;
@@ -108,10 +123,29 @@ ul {
     border-radius: 2px;
 }
 
-.menu {
-    display: flex;
-    gap: 40px;
+.hamburger-menu {
+    margin-left: auto;
+    cursor: pointer;
 }
+@media screen and (min-width: 768px)
+{
+    .hamburger-menu {
+        display: none;
+    }   
+}
+
+.menu {
+    display: none;
+}
+
+@media screen and (min-width: 768px)
+{
+    .menu {
+        display: flex;
+        gap: 40px;
+    }
+}
+
 
 
 /* first section */
@@ -180,6 +214,7 @@ ul {
 
 .services-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
@@ -235,6 +270,7 @@ ul {
 
 .team-members {
     display: flex;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
@@ -322,7 +358,8 @@ ul {
 }
 
 .portofolio-list .portofolio {
-    width: calc((100% - 48px) / 3);
+    /* width: calc((100% - 48px) / 3); */
+    max-width: 100%;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -383,9 +420,9 @@ ul {
 }
 
 .footer-container {
-    display: flex;
-    align-items: baseline;
-    width: 1158px;
+    /* display: flex; */
+    /* align-items: baseline; */
+    /* width: 1158px; */ 
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -658,10 +695,11 @@ ul {
     margin: auto;
 }
 
+/*
 .footer-form {
     margin-left: 80px;
 }
-
+*/
 .footer-form-title {
     margin-bottom: 16px;
     font-weight: 500;
@@ -673,6 +711,7 @@ ul {
 
 .subscribe-form {
     display: flex;
+    flex-direction: column;
     gap: 24px;
 }
 
