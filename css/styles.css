@@ -449,7 +449,11 @@ ul {
     fill: #f4f4fd;
 }
 
-.modal-container {
+.is-open {
+    visibility: initial;
+}
+
+.modal-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -457,6 +461,8 @@ ul {
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    z-index: 999;
 }
 
 .modal {
@@ -670,7 +676,6 @@ ul {
     gap: 24px;
 }
 
-.subscribe-email-label {}
 
 .subscribe-email-input {
     width: 264px;
@@ -712,3 +717,4 @@ ul {
 .subscribe-button-svg {
     margin-left: 16px;
 }
+
